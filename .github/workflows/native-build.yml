@@ -28,6 +28,7 @@ jobs:
           java-version: '21'
           distribution: 'graalvm'
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          components: 'native-image'
 
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v3
