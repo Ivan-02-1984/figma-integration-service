@@ -1,0 +1,65 @@
+name: Build Native Images
+
+on:
+  workflow_dispatch:  # Позволяет запускать вручную
+
+jobs:
+  build:
+    name: Build for ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [windows-latest, macos-latest, ubuntu-latest]
+        include:
+          - os: windows-latest
+            asset_name: figma-service-windows.exe
+          - os: macos-latest
+            asset_name: figma-service-macos
+          - os: ubuntu-latest
+            asset_name: figma-service-linux
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup GraalVM
+        uses: graalvm/setup-graalvm@v1
+        with:
+          java-version: '21'
+          distribution: 'graalvm'
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v3
+
+      - name: Make gradlew executable (Unix)
+        if: runner.os != 'Windows'
+        run: chmod +x gradlew
+
+      - name: Build with Gradle
+        run: |
+          if [ "${{ runner.os }}" == "Windows" ]; then
+            ./gradlew.bat clean nativeCompile --no-daemon
+          else
+            ./gradlew clean nativeCompile --no-daemon
+          fi
+        shell: bash
+
+      - name: Prepare artifact (Windows)
+        if: runner.os == 'Windows'
+        run: |
+          copy build\native\nativeCompile\figma-integration-service.exe ${{ matrix.asset_name }}
+        shell: cmd
+
+      - name: Prepare artifact (Unix)
+        if: runner.os != 'Windows'
+        run: |
+          cp build/native/nativeCompile/figma-integration-service ${{ matrix.asset_name }}
+          chmod +x ${{ matrix.asset_name }}
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.asset_name }}
+          path: ${{ matrix.asset_name }}
+          retention-days: 30
