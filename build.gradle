@@ -83,23 +83,6 @@ graalvmNative {
                     '--enable-https',
                     '--enable-http',
                     '--enable-all-security-services',
-
-//                    // Инициализация DNS классов во время выполнения
-//                    '--initialize-at-run-time=sun.net.dns.ResolverConfigurationImpl',
-//                    '--initialize-at-run-time=io.netty.resolver.dns.DirContextUtils',
-//                    '--initialize-at-run-time=io.netty.resolver.dns.DefaultDnsServerAddressStreamProvider',
-//                    '--initialize-at-run-time=io.netty.resolver.dns.DnsServerAddressStreamProviders$DefaultProviderHolder',
-//
-//                    // Netty
-//                    '--initialize-at-run-time=io.netty.handler.ssl.OpenSsl',
-//                    '--initialize-at-run-time=io.netty.handler.codec.http.HttpObjectEncoder',
-//                    '--initialize-at-run-time=io.netty.handler.codec.http.HttpObjectDecoder',
-//
-//                    // Tomcat
-//                    '--initialize-at-run-time=org.apache.tomcat.jni.Pool',
-//                    '--initialize-at-run-time=org.apache.tomcat.jni.SSL',
-//                    '--initialize-at-run-time=org.apache.tomcat.util.net.openssl.OpenSSLEngine',
-
                     '--report-unsupported-elements-at-runtime',
                     '-H:+ReportExceptionStackTraces',
                     '-H:+AddAllCharsets',
