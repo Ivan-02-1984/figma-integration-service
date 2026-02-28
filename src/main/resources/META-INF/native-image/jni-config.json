@@ -1,12 +1,10 @@
 [
-  {
-    "name": "sun.net.dns.ResolverConfigurationImpl",
-    "methods": [
-      { "name": "init0", "parameterTypes": [] }
-    ],
-    "fields": [
-      { "name": "os_searchlist" },
-      { "name": "os_nameservers" }
-    ]
-  }
+{
+  "name":"java.lang.Boolean",
+  "methods":[{"name":"getBoolean","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"sun.management.VMManagementImpl",
+  "fields":[{"name":"compTimeMonitoringSupport"}, {"name":"currentThreadCpuTimeSupport"}, {"name":"objectMonitorUsageSupport"}, {"name":"otherThreadCpuTimeSupport"}, {"name":"remoteDiagnosticCommandsSupport"}, {"name":"synchronizerUsageSupport"}, {"name":"threadAllocatedMemorySupport"}, {"name":"threadContentionMonitoringSupport"}]
+}
 ]
