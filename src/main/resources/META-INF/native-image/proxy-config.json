@@ -1,0 +1,4 @@
+[
+  ["org.springframework.web.reactive.function.client.WebClient"],
+  ["org.springframework.cache.CacheManager"]
+]

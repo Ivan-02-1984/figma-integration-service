@@ -1,0 +1,38 @@
+[
+  {
+    "name": "com.company.figmaintegrationservice.model.FileNode",
+    "customTargetConstructorClass": null
+  },
+  {
+    "name": "com.company.figmaintegrationservice.model.DownloadResult",
+    "customTargetConstructorClass": null
+  },
+  {
+    "name": "java.util.ArrayList",
+    "customTargetConstructorClass": null
+  },
+  {
+    "name": "java.util.HashMap",
+    "customTargetConstructorClass": null
+  },
+  {
+    "name": "java.time.LocalDateTime",
+    "customTargetConstructorClass": null
+  },
+  {
+    "name": "java.lang.String",
+    "customTargetConstructorClass": null
+  },
+  {
+    "name": "java.lang.Integer",
+    "customTargetConstructorClass": null
+  },
+  {
+    "name": "java.lang.Long",
+    "customTargetConstructorClass": null
+  },
+  {
+    "name": "java.lang.Boolean",
+    "customTargetConstructorClass": null
+  }
+]

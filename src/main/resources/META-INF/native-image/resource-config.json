@@ -1,0 +1,18 @@
+{
+  "resources": {
+    "includes": [
+      {"pattern": "application.*\\.properties$"},
+      {"pattern": "application.*\\.yml$"},
+      {"pattern": "application.*\\.yaml$"},
+      {"pattern": ".*\\.properties$"},
+      {"pattern": ".*\\.csv$"},
+      {"pattern": ".*\\.xlsx$"},
+      {"pattern": ".*\\.xml$"},
+      {"pattern": "META-INF/services/.*"},
+      {"pattern": "META-INF/spring/.*"},
+      {"pattern": "META-INF/spring.factories$"},
+      {"pattern": "META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports$"},
+      {"pattern": "com/company/figmaintegrationservice/.*"}
+    ]
+  }
+}

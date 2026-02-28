@@ -1,0 +1,144 @@
+#server:
+#  port: 8095
+#
+#figma:
+#  base-url: https://api.figma.com/v1
+#
+#spring:
+#  cache:
+#    type: caffeine
+#  boot:
+#    docker:
+#      compose:
+#        enabled: false
+#
+#logging:
+#  level:
+#    com.company.figmaintegrationservice: INFO
+#    reactor.netty.http.client: WARN
+#  pattern:
+#    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+
+#server:
+#  port: 8095
+#
+#figma:
+#  base-url: https://api.figma.com/v1
+#  rate-limit:
+#    requests-per-second: 3.0  # 3 запроса/сек = ~180 запросов/мин (ниже лимита Figma ~200/мин)
+#  archive:
+#    max-images: 5000
+#    timeout-seconds: 600
+#    connection-pool-size: 20
+#    delay-between-requests: 300  # Увеличено с 100 до 300 мс для безопасности
+#    max-concurrent-downloads: 8  # Максимум 8 одновременных загрузок
+#    image-timeout-seconds: 30
+#    max-image-size-mb: 50
+#    min-delay-between-downloads-ms: 300  # Минимальная задержка между загрузками
+#
+#spring:
+#  threads:
+#    virtual:
+#      enabled: true  # Включаем виртуальные потоки для Spring
+#  cache:
+#    type: caffeine
+#    caffeine:
+#      spec: maximumSize=100, expireAfterWrite=10m
+#  boot:
+#    docker:
+#      compose:
+#        enabled: false
+#  mvc:
+#    async:
+#      request-timeout: 600000  # 10 минут
+#  servlet:
+#    multipart:
+#      max-request-size: -1
+#      max-file-size: -1
+#  websocket:
+#    enabled: true
+#
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: health,info,prometheus,metrics
+#  prometheus:
+#    metrics:
+#      export:
+#        enabled: true
+#
+#archive:
+#  include-registry: true
+#  registry-formats: csv,excel
+#
+#logging:
+#  level:
+#    com.company.figmaintegrationservice: INFO
+#    org.springframework.cache: INFO
+#    io.github.resilience4j: INFO
+
+
+server:
+  port: 8095
+
+figma:
+  base-url: https://api.figma.com/v1
+  rate-limit:
+    requests-per-second: 3.0
+  archive:
+    max-images: 5000
+    timeout-seconds: 600
+    connection-pool-size: 20
+    delay-between-requests: 300
+    max-concurrent-downloads: 8
+    image-timeout-seconds: 30
+    max-image-size-mb: 50
+    min-delay-between-downloads-ms: 300
+
+spring:
+  threads:
+    virtual:
+      enabled: true
+  cache:
+    type: caffeine
+    caffeine:
+      spec: maximumSize=100, expireAfterWrite=10m
+  boot:
+    docker:
+      compose:
+        enabled: false
+  mvc:
+    async:
+      request-timeout: 600000
+  servlet:
+    multipart:
+      max-request-size: -1
+      max-file-size: -1
+  websocket:
+    enabled: true
+  aot:
+    enabled: true  # Добавлено для native image
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus,metrics
+  prometheus:
+    metrics:
+      export:
+        enabled: true
+
+archive:
+  include-registry: true
+  registry-formats: csv,excel
+
+logging:
+  level:
+    com.company.figmaintegrationservice: INFO
+    org.springframework.cache: INFO
+    io.github.resilience4j: INFO
+    reactor.netty.http.client: WARN
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"

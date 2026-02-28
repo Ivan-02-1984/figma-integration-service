@@ -1,0 +1,12 @@
+[
+  {
+    "name": "sun.net.dns.ResolverConfigurationImpl",
+    "methods": [
+      { "name": "init0", "parameterTypes": [] }
+    ],
+    "fields": [
+      { "name": "os_searchlist" },
+      { "name": "os_nameservers" }
+    ]
+  }
+]

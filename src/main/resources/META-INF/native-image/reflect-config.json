@@ -1,0 +1,38 @@
+[
+  {
+    "name": "com.company.figmaintegrationservice.config.FigmaProperties",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "sun.net.dns.ResolverConfigurationImpl",
+    "fields": [
+      { "name": "os_searchlist" },
+      { "name": "os_nameservers" }
+    ],
+    "methods": [
+      { "name": "<init>", "parameterTypes": [] },
+      { "name": "init0", "parameterTypes": [] }
+    ]
+  },
+  {
+    "name": "io.netty.resolver.dns.DirContextUtils",
+    "methods": [
+      { "name": "addNameServers", "parameterTypes": ["java.util.List"] }
+    ]
+  },
+  {
+    "name": "io.netty.resolver.dns.DefaultDnsServerAddressStreamProvider",
+    "methods": [
+      { "name": "<init>", "parameterTypes": [] }
+    ]
+  },
+  {
+    "name": "org.springframework.cache.caffeine.CaffeineCacheManager",
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "com.github.benmanes.caffeine.cache.SSMSW",
+    "allDeclaredFields": true
+  }
+]
