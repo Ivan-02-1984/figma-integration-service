@@ -35,3 +35,43 @@ out/
 
 ### VS Code ###
 .vscode/
+
+### Native image artifacts ###
+native-image/
+*.exe
+*.dll
+*.so
+*.dylib
+*.obj
+*.lib
+*.exp
+*.pdb
+
+### GraalVM specific ###
+/META-INF/native-image/!agent-extracted-predefined-classes/
+/reachability-metadata.json
+
+### GitHub Actions cache ###
+.cache/
+actions-runner/
+
+### Temporary files ###
+*.tmp
+*.temp
+*.log
+hs_err_pid*
+replay_pid*
+
+### OS metadata ###
+.DS_Store
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+### Project specific binaries ###
+/figma-integration-service
+/*.exe
+/*.dmg
+/*.deb
+/*.rpm
+/*.msi
