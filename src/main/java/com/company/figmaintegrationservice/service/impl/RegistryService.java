@@ -3,6 +3,7 @@ package com.company.figmaintegrationservice.service.impl;
 import com.company.figmaintegrationservice.dto.FigmaExportDto;
 import com.company.figmaintegrationservice.service.IRegistryService;
 import com.company.figmaintegrationservice.service.strategy.RegistryGenerationStrategy;
+import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -28,7 +29,7 @@ public class RegistryService implements IRegistryService {
     /**
      * Инициализирует карту стратегий после внедрения зависимостей.
      */
-    @org.springframework.beans.factory.annotation.Autowired
+    @PostConstruct
     public void init() {
         strategyMap = strategies.stream()
                 .collect(Collectors.toMap(

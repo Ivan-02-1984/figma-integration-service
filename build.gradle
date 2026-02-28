@@ -112,6 +112,14 @@ graalvmNative {
         }
     }
 }
+configurations.all {
+    exclude group: 'org.springframework.boot', module: 'spring-boot-docker-compose'
+}
+task runWithAgent(type: JavaExec) {
+    mainClass = 'com.company.figmaintegrationservice.FigmaIntegrationServiceApplication'
+    classpath = sourceSets.main.runtimeClasspath
+    jvmArgs = ["-agentlib:native-image-agent=config-output-dir=${projectDir}/src/main/resources/META-INF/native-image"]
+}
 
 
 //plugins {
