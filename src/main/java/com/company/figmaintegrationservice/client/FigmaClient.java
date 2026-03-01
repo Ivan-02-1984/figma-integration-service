@@ -8,8 +8,6 @@ import com.company.figmaintegrationservice.client.dto.FigmaNodesResponse;
 import com.company.figmaintegrationservice.client.dto.PageNode;
 import com.company.figmaintegrationservice.service.IFigmaFileCacheService;
 import com.company.figmaintegrationservice.service.IRateLimitService;
-
-//import tools.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
